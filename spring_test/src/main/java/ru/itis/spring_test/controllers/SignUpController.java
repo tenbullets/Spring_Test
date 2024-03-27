@@ -18,9 +18,12 @@ public class SignUpController {
         return "sign_up_page";
     }
 
-    @PostMapping("/signUpPage")
+    @PostMapping("/signUp")
     public String signUp(UserForm form) {
-        signUpService.addUser(form);
+        if(form.getPassword().equals(form.getPasswordCheck())) {
+            signUpService.addUser(form);
+            return "redirect:/signIn";
+        }
         return "redirect:/signUp";
     }
 }

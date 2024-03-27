@@ -3,4 +3,8 @@ package ru.itis.spring_test.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import ru.itis.spring_test.models.User;
 
-public interface UsersRepository extends JpaRepository<User, Long> {}
+import java.util.Optional;
+
+public interface UsersRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);
+}
