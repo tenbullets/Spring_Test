@@ -11,6 +11,7 @@
 <p><a class="nav_link" href="/signIn" data-scroll="#">Authorization</a></p>
 <p><a class="nav_link" href="/users" data-scroll="#">Users List</a></p>
 <p><a class="nav_link" href="/profile" data-scroll="#">My profile</a></p>
+<p><a class="nav_link" href="/addPost" data-scroll="#">+ Post</a></p>
 </body>
 
 </html>
