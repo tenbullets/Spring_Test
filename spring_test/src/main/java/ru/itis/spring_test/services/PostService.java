@@ -15,4 +15,6 @@ public interface PostService {
 
     PostDto like(Long userId, Long postId);
 
+    List<PostDto> getAllPosts();
+
 }

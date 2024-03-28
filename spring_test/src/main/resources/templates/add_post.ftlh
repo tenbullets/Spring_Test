@@ -5,38 +5,32 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <#--    <link rel="stylesheet" href="/css/style_3.css">-->
     <link rel="stylesheet" href="/css/style_3.css">
 
     <style>
         textarea {
             resize: none;
-
             display: block;
-            height: 320px;
-            width: 94%;
+            width: 81%;
             background-color: #b4b3b33d;
             padding: 0 5px;
-
-            font-size: 15px;
+            font-size: 21px;
             font-family: 'Manrope', sans-serif;
             font-weight: 400;
-            color: black;
-
-            margin-left: 0px;
-            margin-top: 8px;
-            margin-bottom: 35px;
-
+            color: white;
+            margin: 8px auto 20px;
             border: none;
+            border-radius: 7px;
         }
 
         textarea.shortDesc {
-            height: 150px;
+            height: 277px;
             margin-bottom: 10px;
+            margin-top: 67px;
         }
     </style>
 
-    <title>Authorization</title>
+    <title>Account</title>
 </head>
 
 <body>
@@ -45,7 +39,7 @@
     <div class="container_1">
         <div class="header__inner">
             <div class="header__text">
-                <h1>Log in</h1>
+                <h1>What's new?</h1>
             </div>
         </div>
     </div>
@@ -57,9 +51,7 @@
 
             <div class="block__3">
                 <form action="/addPost" method="post">
-                    <h4 class="block__text">Authorization</h4>
 
-                    <label>Краткое описание</label>
                     <textarea maxlength="2000" name="text" class="shortDesc"></textarea>
 
                     <button>SEND POST</button>

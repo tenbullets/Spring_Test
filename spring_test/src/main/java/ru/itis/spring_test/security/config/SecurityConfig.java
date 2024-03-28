@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/css/**").antMatchers("/imgs/**");
+        web.ignoring().antMatchers("/css/**").antMatchers("/imgs/**").antMatchers("/js/**");
     }
 
     @Override
@@ -40,6 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/users").hasAnyAuthority("ADMIN")
                 .antMatchers("/profile").authenticated()
                 .antMatchers("/addPost").authenticated()
+                .antMatchers("/feed").authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/signIn")

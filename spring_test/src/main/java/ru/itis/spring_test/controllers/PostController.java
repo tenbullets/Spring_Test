@@ -3,6 +3,7 @@ package ru.itis.spring_test.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.itis.spring_test.dto.PostForm;
@@ -30,10 +31,14 @@ public class PostController {
     @PostMapping("/addPost")
     public String addPost(@AuthenticationPrincipal UserDetailsImpl userDetails, PostForm form) {
         Optional<User> user = usersService.getUserByEmail(userDetails.getEmail());
-
-//        System.out.println("user id = " + user.get().getId() + ", text:" + form.getText());
         postService.addPost(user.get().getId(), form);
-
-        return "redirect:/signUp";
+        return "redirect:/profile";
     }
+
+    @GetMapping("/feed")
+    public String getFeedPage(Model model) {
+        model.addAttribute("postsList", postService.getAllPosts());
+        return "feed_page";
+    }
+
 }

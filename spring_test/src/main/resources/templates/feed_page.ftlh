@@ -5,9 +5,9 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style_3.css">
+    <link rel="stylesheet" href="/css/style_4.css">
 
-    <title>Welcome-Page</title>
+    <title>Feed</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <div class="container_1">
         <div class="header__inner">
             <div class="header__text">
-                <h1>Welcome-Page</h1>
+                <h1>Feed</h1>
             </div>
         </div>
     </div>
@@ -26,12 +26,18 @@
     <div class="container_2">
         <div class="basic__inner">
             <div class="block__4">
-                <p><a class="text" href="/signUp" data-scroll="#">Registration</a></p>
-                <p><a class="text" href="/signIn" data-scroll="#">Authorization</a></p>
-                <p><a class="text" href="/users" data-scroll="#">Users List</a></p>
-                <p><a class="text" href="/profile" data-scroll="#">My profile</a></p>
-                <p><a class="text" href="/addPost" data-scroll="#">+ Post</a></p>
-                <p><a class="text" href="/feed" data-scroll="#">Feed</a></p>
+
+                <form action="/feed" method="get">
+                    <#list postsList as post>
+                        <div class="post">
+                            <p class="text" style="font-size: 24px">${post.author}</p>
+                            <p class="text" style="color: darkturquoise">${post.text}</p>
+                            <p class="text" style="margin-bottom: 20px; color: #00d188">${post.likes} likes</p>
+                        </div>
+                    </#list>
+
+                </form>
+
             </div>
         </div>
     </div>

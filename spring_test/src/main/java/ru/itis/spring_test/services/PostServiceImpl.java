@@ -12,6 +12,8 @@ import ru.itis.spring_test.repository.UsersRepository;
 
 import java.util.List;
 
+import static ru.itis.spring_test.dto.PostDto.getPostsList;
+
 @Component
 public class PostServiceImpl implements PostService {
 
@@ -26,7 +28,7 @@ public class PostServiceImpl implements PostService {
     public List<PostDto> getPostByUser(Long userId) {
         User user = usersRepository.getOne(userId);
         List<Post> postsOfUser = user.getPosts();
-        return PostDto.getPostsList(postsOfUser);
+        return getPostsList(postsOfUser);
     }
 
     @Override
@@ -53,5 +55,10 @@ public class PostServiceImpl implements PostService {
         }
         postRepository.save(post);
         return PostDto.from(post);
+    }
+
+    @Override
+    public List<PostDto> getAllPosts() {
+        return getPostsList(postRepository.findAll());
     }
 }
