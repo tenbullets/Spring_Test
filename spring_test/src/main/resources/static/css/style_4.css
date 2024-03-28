@@ -119,6 +119,15 @@ button{
     cursor: pointer;
 }
 
+button.like {
+    margin: 3px 0 16px 15px;
+    height: 26px;
+    width: 39px;
+    font-size: 17px;
+    padding: 0 0 3px 0;
+    border-radius: 0;
+}
+
 label{
     font-family: 'DM Sans', sans-serif;
     color: #ffffff;

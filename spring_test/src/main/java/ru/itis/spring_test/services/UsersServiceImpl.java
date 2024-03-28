@@ -33,5 +33,10 @@ public class UsersServiceImpl implements UsersService{
         return usersRepository.findUserByUsername(username);
     }
 
+    @Override
+    public Optional<User> getUserById(Long id) {
+        return usersRepository.findUserById(id);
+    }
+
 
 }

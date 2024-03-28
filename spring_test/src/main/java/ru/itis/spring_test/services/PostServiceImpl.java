@@ -48,6 +48,7 @@ public class PostServiceImpl implements PostService {
     public PostDto like(Long userId, Long postId) {
         User user = usersRepository.getOne(userId);
         Post post = postRepository.getOne(postId);
+
         if (postRepository.existsByPostIdAndLikesContaining(postId, user)) {
             post.getLikes().remove(user);
         } else {

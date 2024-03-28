@@ -27,32 +27,31 @@
         <div class="basic__inner">
             <div class="block__4">
 
-                <form action="/feed" method="get">
                     <#list postsList as post>
-                        <div class="post">
-                            <p class="text" style="font-size: 24px">${post.author}</p>
-                            <p class="text" style="color: darkturquoise">${post.text}</p>
-                            <p class="text" style="margin-bottom: 20px; color: #00d188">${post.likes} likes</p>
-                        </div>
-                    </#list>
+                        <form action="/feed" method="get" id="likes-form${post.id}" onsubmit="return false;">
+<#--                        <form action="/feed" method="get" id="likes-form${post.id}">-->
+                            <div class="post">
+                                <p class="text" style="font-size: 24px">${post.author}</p>
+                                <p class="text" style="color: darkturquoise">${post.text}</p>
+                                <p class="text" style="margin-bottom: 20px; color: #00d188" id="lto">Likes: ${post.likes}</p>
 
-                </form>
+                                <input type="hidden" id="postId" value="${post.id}">
+<#--                                <input type="text" id="postId"/>-->
+                                <div id="feedback"></div>
+                                <button type="submit" id="btn_like" class="like" >pin</button>
+                            </div>
+                        </form>
+                    </#list>
 
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__text">
-                    <#--                    <h3>tg: zhertvapropagandynolana</h3>-->
-                </div>
-            </div>
-        </div>
-    </footer>
 
 </div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/main_2.js"></script>
 
 </body>
 </html>
