@@ -10,4 +10,6 @@ public interface UsersService {
     List<UserDto> getAllUsers();
 
     Optional<User> getUserByEmail(String email);
+
+    Optional<User> getUserByUsername(String username);
 }
