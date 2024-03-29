@@ -35,7 +35,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/welcome").permitAll()
-                .antMatchers("/feed").permitAll()
                 .antMatchers("/signUp").permitAll()
                 .antMatchers("/**").authenticated()
                 .antMatchers("/users").hasAnyAuthority("ADMIN")
@@ -43,6 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/profile").authenticated()
                 .antMatchers("/addPost").authenticated()
                 .antMatchers("/sendLike").authenticated()
+                .antMatchers("/feed").authenticated()
+                .antMatchers("/theWall").authenticated()
                 .antMatchers("/welcome").permitAll()
 
 

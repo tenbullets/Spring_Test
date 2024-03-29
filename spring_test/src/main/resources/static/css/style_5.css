@@ -41,7 +41,6 @@ body {
 }
 
 .basic__inner {
-    display: flex;
     margin: 75px 0 35px 0;
 }
 
@@ -69,7 +68,7 @@ body {
 
 .block__3 {
     height: 468px;
-    margin: 0 7px 0 7px;
+    margin: 0 7px 46px 7px;
     border-radius: 7px;
     background-color: rgba(255, 255, 255, 0.074);
     backdrop-filter: blur(10px);

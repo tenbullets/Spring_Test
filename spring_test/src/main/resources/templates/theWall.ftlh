@@ -5,7 +5,9 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style_3.css">
+    <link rel="stylesheet" href="/css/style_5.css">
+
+    <title>The Wall</title>
 
     <style>
         textarea {
@@ -29,8 +31,6 @@
             margin-top: 67px;
         }
     </style>
-
-    <title>WALL</title>
 </head>
 
 <body>
@@ -39,7 +39,7 @@
     <div class="container_1">
         <div class="header__inner">
             <div class="header__text">
-                <h1>What's new?</h1>
+                <h1>What's new</h1>
             </div>
         </div>
     </div>
@@ -50,28 +50,38 @@
         <div class="basic__inner">
 
             <div class="block__3">
-                <form action="/addPost" method="post">
+                <form id="save_post">
 
-                    <textarea maxlength="2000" name="text" class="shortDesc"></textarea>
+                    <textarea maxlength="2000" name="text" class="shortDesc" id="post_text"></textarea>
 
-                    <button>SEND POST</button>
+                    <button id="save_btn">SEND POST</button>
                 </form>
+
+            </div>
+
+            <div class="block__4" id="postwall">
+                <#list posts as post>
+                    <form action="/theWall" method="get">
+                        <div class="post">
+                            <p class="text" style="font-size: 24px">${post.author}</p>
+                            <p class="text" style="color: darkturquoise">${post.text}</p>
+                            <div class="like_block">
+                                <p class="like_count">${post.likes}</p>
+                            </div>
+                        </div>
+
+                    </form>
+                </#list>
             </div>
 
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__text">
-
-                </div>
-            </div>
-        </div>
-    </footer>
 
 </div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/main_3.js"></script>
 
 </body>
 </html>

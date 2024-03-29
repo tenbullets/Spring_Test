@@ -37,6 +37,7 @@
                 <p><a class="text" href="/welcome" data-scroll="#">Return to the welcome page</a></p>
                 <p><a class="text" href="/feed" data-scroll="#">Feed</a></p>
                 <p><a class="text" href="/addPost" data-scroll="#">+ Post</a></p>
+                <p><a class="text" href="/theWall" data-scroll="#">My Posts</a></p>
             </div>
 
         </div>

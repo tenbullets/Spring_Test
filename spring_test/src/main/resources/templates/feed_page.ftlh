@@ -28,17 +28,15 @@
             <div class="block__4">
 
                     <#list postsList as post>
-                        <form action="/feed" method="get" id="likes-form${post.id}" onsubmit="return false;">
-<#--                        <form action="/feed" method="get" id="likes-form${post.id}">-->
+                        <form action="/feed" method="get" id="likes-form${post.id}">
                             <div class="post">
                                 <p class="text" style="font-size: 24px">${post.author}</p>
                                 <p class="text" style="color: darkturquoise">${post.text}</p>
-                                <p class="text" style="margin-bottom: 20px; color: #00d188" id="lto">Likes: ${post.likes}</p>
+                                <div class="like_block">
+                                    <p class="like_count" style="margin-bottom: 20px; color: #00d188" id="likeCount${post.id}">${post.likes}</p>
+                                    <button type="submit" id="btn_like" class="like" data-liked="false">pin</button>
+                                </div>
 
-                                <input type="hidden" id="postId" value="${post.id}">
-<#--                                <input type="text" id="postId"/>-->
-                                <div id="feedback"></div>
-                                <button type="submit" id="btn_like" class="like" >pin</button>
                             </div>
                         </form>
                     </#list>

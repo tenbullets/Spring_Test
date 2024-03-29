@@ -30,7 +30,7 @@ public class UsersServiceImpl implements UsersService{
 
     @Override
     public Optional<User> getUserByUsername(String username) {
-        return usersRepository.findUserByUsername(username);
+        return Optional.ofNullable(usersRepository.findUserByUsername(username));
     }
 
     @Override

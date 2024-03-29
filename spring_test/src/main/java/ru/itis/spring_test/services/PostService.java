@@ -1,10 +1,12 @@
 package ru.itis.spring_test.services;
 
-import org.springframework.stereotype.Repository;
 import ru.itis.spring_test.dto.PostDto;
 import ru.itis.spring_test.dto.PostForm;
+import ru.itis.spring_test.models.Post;
+import ru.itis.spring_test.models.User;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public interface PostService {
@@ -16,5 +18,9 @@ public interface PostService {
     PostDto like(Long userId, Long postId);
 
     List<PostDto> getAllPosts();
+
+    Optional<Post> getPostByPostId(Long postId);
+
+    List<PostDto> getPostByUsername(String username);
 
 }

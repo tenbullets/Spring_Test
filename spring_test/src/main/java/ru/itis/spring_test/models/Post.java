@@ -15,7 +15,6 @@ import java.util.List;
 @Builder
 @Entity
 public class Post {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
