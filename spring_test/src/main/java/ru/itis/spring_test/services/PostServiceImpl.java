@@ -56,10 +56,7 @@ public class PostServiceImpl implements PostService {
         User user = usersRepository.getOne(userId);
         Post post = postRepository.getOne(postId);
 
-        System.out.println("user: " + user.getUsername() + " , post id: " + post.getPostId());
-
         boolean res = postRepository.existsByPostIdAndLikesContaining(postId, user);
-        System.out.println("result  = " + res);
 
         if (res) {
             post.getLikes().remove(user);

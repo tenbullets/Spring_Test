@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.itis.spring_test.models.Banned;
 import ru.itis.spring_test.models.User;
 
 import java.util.List;
@@ -17,12 +18,14 @@ public class UserDto {
     private Long id;
     private String email;
     private String username;
+    private Banned ban_status;
 
     public static UserDto from(User user) {
         return UserDto.builder()
                 .id(user.getId())
                 .username(user.getUsername())
                 .email(user.getEmail())
+                .ban_status(user.getBan_status())
                 .build();
     }
 

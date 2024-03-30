@@ -14,4 +14,8 @@ public interface UsersService {
     Optional<User> getUserByUsername(String username);
 
     Optional<User> getUserById(Long id);
+
+    User ban(Optional<User> user);
+
+
 }

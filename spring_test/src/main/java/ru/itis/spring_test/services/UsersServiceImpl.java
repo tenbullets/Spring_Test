@@ -3,6 +3,7 @@ package ru.itis.spring_test.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.itis.spring_test.dto.UserDto;
+import ru.itis.spring_test.models.Banned;
 import ru.itis.spring_test.models.User;
 import ru.itis.spring_test.repository.UsersRepository;
 
@@ -36,6 +37,18 @@ public class UsersServiceImpl implements UsersService{
     @Override
     public Optional<User> getUserById(Long id) {
         return usersRepository.findUserById(id);
+    }
+
+    @Override
+    public User ban(Optional<User> user) {
+        User u = usersRepository.getOne(user.get().getId());
+        if(u.getBan_status().equals(Banned.NONBANNED)) {
+            u.setBan_status(Banned.BANNED);
+        } else {
+            u.setBan_status(Banned.NONBANNED);
+        }
+        usersRepository.save(u);
+        return u;
     }
 
 

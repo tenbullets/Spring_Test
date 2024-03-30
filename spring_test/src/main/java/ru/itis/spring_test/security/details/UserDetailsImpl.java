@@ -3,6 +3,7 @@ package ru.itis.spring_test.security.details;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import ru.itis.spring_test.models.Banned;
 import ru.itis.spring_test.models.User;
 
 import java.util.Collection;
@@ -39,7 +40,7 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return user.getBan_status().equals(Banned.NONBANNED);
     }
 
     @Override
