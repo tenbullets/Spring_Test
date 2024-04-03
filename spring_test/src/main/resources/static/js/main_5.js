@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    $("#ban_form").submit(function (event) {
+    $("#add_admin_form").submit(function (event) {
         event.preventDefault();
-        ban_func();
+        add_admin_func();
     });
 });
 
@@ -31,18 +31,18 @@ function renderTable(newTable) {
     $('#refresh').html(innerHtml);
 }
 
-function ban_func() {
+function add_admin_func() {
 
     let username = {}
     username["username"] = $("#username").val();
     console.log("u = " + username)
 
-    $("#ban_btn").prop("disabled", true);
+    $("#add_admin_btn").prop("disabled", true);
 
     $.ajax({
         type: "POST",
         contentType: "application/json",
-        url: "/ban",
+        url: "/addAdmin",
         data: JSON.stringify(username),
         dataType: 'json',
         cache: false,
@@ -51,14 +51,14 @@ function ban_func() {
         success: function (data) {
             renderTable(data);
             console.log("SUCCESS");
-            $("#ban_btn").prop("disabled", false);
+            $("#add_admin_btn").prop("disabled", false);
 
         },
         error: function (e) {
             let json = "<h4>User not found</h4>";
             $('#refresh').html(json);
             console.log("ERROR : ", e);
-            $("#ban_btn").prop("disabled", false);
+            $("#add_admin_btn").prop("disabled", false);
         }
     });
 

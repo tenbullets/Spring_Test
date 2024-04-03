@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style_3.css">
 
-    <title>Welcome-Page</title>
+    <title>Admin Page</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <div class="container_1">
         <div class="header__inner">
             <div class="header__text">
-                <h1>Welcome-Page</h1>
+                <h1>Tools</h1>
             </div>
         </div>
     </div>
@@ -25,14 +25,23 @@
 <div class="basic">
     <div class="container_2">
         <div class="basic__inner">
+
             <div class="block__4">
-                <p class="text" style="font-size: 24px; margin-bottom: 30px">Account</p>
-                <p><a class="text" href="/signUp" data-scroll="#">Registration</a></p>
-                <p><a class="text" href="/signIn" data-scroll="#">Authorization</a></p>
-                <p><a class="text" href="/profile" data-scroll="#">My profile</a></p>
-                <p><a class="text" href="/addPost" data-scroll="#">+ Post</a></p>
-                <p><a class="text" href="/feed" data-scroll="#">Feed</a></p>
+                <p class="text" style="font-size: 24px; margin-bottom: 30px">INFO</p>
+                <h3 class="text">Username: ${userName}</h3>
+                <h3 class="text">Email: ${email}</h3>
+                <h3 class="text">Status: Admin</h3>
             </div>
+
+            <div class="block__4">
+                <p class="text" style="font-size: 24px; margin-bottom: 30px">ACTIONS</p>
+                <p><a class="text" href="/welcome" data-scroll="#">Return to the welcome page</a></p>
+                <p><a class="text" href="/feed" data-scroll="#">Feed</a></p>
+                <p><a class="text" href="/users" data-scroll="#">Users List</a></p>
+                <p><a class="text" href="/search" data-scroll="#">Search</a></p>
+                <p><a class="text" href="/addAdmin" data-scroll="#">Grant Superuser Rights</a></p>
+            </div>
+
         </div>
     </div>
 

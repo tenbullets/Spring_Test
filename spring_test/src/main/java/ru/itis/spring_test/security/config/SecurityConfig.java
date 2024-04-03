@@ -39,14 +39,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").authenticated()
                 .antMatchers("/users").hasAnyAuthority("ADMIN")
                 .antMatchers("/search").hasAnyAuthority("ADMIN")
+                .antMatchers("/ban").hasAnyAuthority("ADMIN")
+                .antMatchers("/addAdmin").hasAnyAuthority("ADMIN")
                 .antMatchers("/profile").authenticated()
                 .antMatchers("/addPost").authenticated()
                 .antMatchers("/sendLike").authenticated()
                 .antMatchers("/feed").authenticated()
                 .antMatchers("/theWall").authenticated()
-                .antMatchers("/ban").authenticated()
 
                 .and()
+
                 .formLogin()
                 .loginPage("/signIn")
                 .usernameParameter("email")

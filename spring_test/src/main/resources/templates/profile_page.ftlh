@@ -33,7 +33,7 @@
             </div>
 
             <div class="block__4">
-                <p class="text" style="font-size: 24px; margin-bottom: 30px"">ACTIONS</p>
+                <p class="text" style="font-size: 24px; margin-bottom: 30px">ACTIONS</p>
                 <p><a class="text" href="/welcome" data-scroll="#">Return to the welcome page</a></p>
                 <p><a class="text" href="/feed" data-scroll="#">Feed</a></p>
                 <p><a class="text" href="/addPost" data-scroll="#">+ Post</a></p>

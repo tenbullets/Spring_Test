@@ -9,7 +9,7 @@
 </head>
 <body>
 <div>
-    <form id="ban_form">
+    <form id="add_admin_form">
         <div>
             <label class="col-sm-2 control-label">Username</label>
             <div>
@@ -19,9 +19,10 @@
 
         <div>
             <div>
-                <button id="ban_btn">BAN</button>
+                <button id="add_admin_btn">Add Admin</button>
             </div>
         </div>
+
     </form>
 </div>
 <div>
@@ -46,7 +47,7 @@
 </div>
 
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="/js/main_4.js"></script>
+<script type="text/javascript" src="/js/main_5.js"></script>
 
 </body>
 </html>

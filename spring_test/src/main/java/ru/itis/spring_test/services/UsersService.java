@@ -17,5 +17,7 @@ public interface UsersService {
 
     User ban(Optional<User> user);
 
+    User addAdmin(Optional<User> user);
+
 
 }

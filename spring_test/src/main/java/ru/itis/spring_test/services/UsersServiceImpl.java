@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.itis.spring_test.dto.UserDto;
 import ru.itis.spring_test.models.Banned;
+import ru.itis.spring_test.models.Role;
 import ru.itis.spring_test.models.User;
 import ru.itis.spring_test.repository.UsersRepository;
 
@@ -46,6 +47,18 @@ public class UsersServiceImpl implements UsersService{
             u.setBan_status(Banned.BANNED);
         } else {
             u.setBan_status(Banned.NONBANNED);
+        }
+        usersRepository.save(u);
+        return u;
+    }
+
+    @Override
+    public User addAdmin(Optional<User> user) {
+        User u = usersRepository.getOne(user.get().getId());
+        if(u.getRole().equals(Role.ADMIN)) {
+            u.setRole(Role.USER);
+        } else {
+            u.setRole(Role.ADMIN);
         }
         usersRepository.save(u);
         return u;

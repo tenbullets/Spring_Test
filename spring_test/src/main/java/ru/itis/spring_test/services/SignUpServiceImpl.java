@@ -25,7 +25,7 @@ public class SignUpServiceImpl implements SignUpService {
                 .username(userForm.getUsername())
                 .status("CONFIRMED")
                 .ban_status(Banned.NONBANNED)
-                .role(Role.ADMIN)
+                .role(Role.USER)
                 .build();
         usersRepository.save(user);
     }
