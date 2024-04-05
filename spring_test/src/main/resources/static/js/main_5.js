@@ -8,8 +8,6 @@ $(document).ready(function () {
 
 
 function renderTable(newTable) {
-    console.log("size= " + newTable.length)
-
     let innerHtml = '<tr>\n' +
         '               <th>ID</th>' +
         '               <th>EMAIL</th>' +
@@ -32,10 +30,8 @@ function renderTable(newTable) {
 }
 
 function add_admin_func() {
-
     let username = {}
     username["username"] = $("#username").val();
-    console.log("u = " + username)
 
     $("#add_admin_btn").prop("disabled", true);
 
@@ -55,11 +51,12 @@ function add_admin_func() {
 
         },
         error: function (e) {
-            let json = "<h4>User not found</h4>";
+            let json = "<h4>You're a moron</h4>";
             $('#refresh').html(json);
             console.log("ERROR : ", e);
             $("#add_admin_btn").prop("disabled", false);
         }
+
     });
 
 }

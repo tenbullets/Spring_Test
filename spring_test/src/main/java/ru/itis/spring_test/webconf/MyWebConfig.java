@@ -10,10 +10,7 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
-                .addResourceLocations("resources/", "static/", "public/",
-                        "META-INF/resources/")
-                .addResourceLocations("classpath:resources/", "classpath:static/",
-                        "classpath:public/", "classpath:META-INF/resources/");
-
+                .addResourceLocations("resources/", "static/", "public/", "META-INF/resources/")
+                .addResourceLocations("classpath:resources/", "classpath:static/", "classpath:public/", "classpath:META-INF/resources/");
     }
 }

@@ -30,6 +30,7 @@
                     <#list postsList as post>
                         <form action="/feed" method="get" id="likes-form${post.id}">
                             <div class="post">
+
                                 <p class="text" style="font-size: 24px">${post.author}</p>
                                 <p class="text" style="color: darkturquoise">${post.text}</p>
                                 <div class="like_block">

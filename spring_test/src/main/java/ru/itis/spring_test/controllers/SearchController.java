@@ -24,8 +24,6 @@ public class SearchController {
 
     @PostMapping("/search")
     public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody SearchDto searchDto, Errors errors) {
-
-        System.out.println("req username " + searchDto.getUsername() + " ///////");
         AjaxResponseBody result = new AjaxResponseBody();
 
         if(errors.hasErrors()) {
@@ -35,11 +33,10 @@ public class SearchController {
 
         Optional<User> userList = usersService.getUserByUsername(searchDto.getUsername());
 
-        if(userList.isEmpty()) {
+        if(userList.isEmpty())
             result.setMsg("no user found");
-        } else {
+        else
             result.setMsg("success");
-        }
 
         result.setResult(userList);
 

@@ -16,6 +16,7 @@ public class UserDetailsImpl implements UserDetails {
     public UserDetailsImpl(User user) {
         this.user = user;
     }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority(user.getRole().toString()));
@@ -49,7 +50,5 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     @Override
-    public boolean isEnabled() {
-        return user.getStatus().equals("CONFIRMED");
-    }
+    public boolean isEnabled() { return user.getStatus().equals("CONFIRMED"); }
 }

@@ -46,6 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/sendLike").authenticated()
                 .antMatchers("/feed").authenticated()
                 .antMatchers("/theWall").authenticated()
+                .antMatchers("delUserAccount").authenticated()
 
                 .and()
 

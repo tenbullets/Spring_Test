@@ -55,7 +55,7 @@ function ban_func() {
 
         },
         error: function (e) {
-            let json = "<h4>User not found</h4>";
+            let json = "<h4>You're a moron</h4>";
             $('#refresh').html(json);
             console.log("ERROR : ", e);
             $("#ban_btn").prop("disabled", false);
