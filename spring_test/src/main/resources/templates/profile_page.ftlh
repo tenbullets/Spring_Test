@@ -38,6 +38,7 @@
                 <p><a class="text" href="/feed" data-scroll="#">Feed</a></p>
                 <p><a class="text" href="/addPost" data-scroll="#">+ Post</a></p>
                 <p><a class="text" href="/theWall" data-scroll="#">My Posts</a></p>
+                <p><a class="text" href="/files" data-scroll="#">My Files</a></p>
 
 <#--                <p><a class="text" href="/delUserAccount" data-scroll="#" style="color: #ff3333; margin-top: 45px"></a></p>-->
 

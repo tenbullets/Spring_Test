@@ -36,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/welcome").permitAll()
                 .antMatchers("/signUp").permitAll()
+
                 .antMatchers("/**").authenticated()
                 .antMatchers("/users").hasAnyAuthority("ADMIN")
                 .antMatchers("/search").hasAnyAuthority("ADMIN")
@@ -47,6 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/feed").authenticated()
                 .antMatchers("/theWall").authenticated()
                 .antMatchers("delUserAccount").authenticated()
+                .antMatchers("/files/**").authenticated()
+
 
                 .and()
 
