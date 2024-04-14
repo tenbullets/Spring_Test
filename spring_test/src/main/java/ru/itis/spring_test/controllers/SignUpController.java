@@ -24,7 +24,6 @@ public class SignUpController {
     public String signUp(UserForm form, Model model) {
         if(form.getPassword().equals(form.getPasswordCheck())) {
             signUpService.addUser(form);
-            System.out.println(form.getUsername());
             model.addAttribute("username", form.getUsername());
             return "activation_page";
         }

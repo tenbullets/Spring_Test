@@ -69,10 +69,9 @@ public class UsersServiceImpl implements UsersService{
         User u = usersRepository.getOne(user.get().getId());
         if(u.getStatus().equals("NON-CONFIRMED")) {
             u.setStatus("CONFIRMED");
-        } else {
-            u.setStatus("NON-CONFIRMED");
+            u.setKey(null);
+            usersRepository.save(u);
         }
-        usersRepository.save(u);
         return u;
     }
 
