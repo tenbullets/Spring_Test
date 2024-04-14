@@ -19,5 +19,5 @@ public interface UsersService {
 
     User addAdmin(Optional<User> user);
 
-
+    User confirmUser(Optional<User> user);
 }

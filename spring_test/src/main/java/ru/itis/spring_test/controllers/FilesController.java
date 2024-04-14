@@ -26,6 +26,8 @@ public class FilesController {
     @PostMapping("/files")
     public ResponseEntity<String> fileUpload(@RequestParam("file") MultipartFile file) {
         String filePath = filesStorageService.saveFile(file);
+        System.out.println(file.getName());
+        System.out.println(file);
         return ResponseEntity.ok(filePath);
     }
 

@@ -64,5 +64,17 @@ public class UsersServiceImpl implements UsersService{
         return u;
     }
 
+    @Override
+    public User confirmUser(Optional<User> user) {
+        User u = usersRepository.getOne(user.get().getId());
+        if(u.getStatus().equals("NON-CONFIRMED")) {
+            u.setStatus("CONFIRMED");
+        } else {
+            u.setStatus("NON-CONFIRMED");
+        }
+        usersRepository.save(u);
+        return u;
+    }
+
 
 }

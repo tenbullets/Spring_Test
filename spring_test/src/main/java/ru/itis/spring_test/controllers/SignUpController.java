@@ -1,5 +1,6 @@
 package ru.itis.spring_test.controllers;
 
+import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +21,12 @@ public class SignUpController {
     }
 
     @PostMapping("/signUp")
-    public String signUp(UserForm form) {
+    public String signUp(UserForm form, Model model) {
         if(form.getPassword().equals(form.getPasswordCheck())) {
             signUpService.addUser(form);
-            return "redirect:/signIn";
+            System.out.println(form.getUsername());
+            model.addAttribute("username", form.getUsername());
+            return "activation_page";
         }
         return "redirect:/signUp";
     }

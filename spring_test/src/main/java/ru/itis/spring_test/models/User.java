@@ -27,6 +27,7 @@ public class User {
     private Role role;
     private Banned ban_status;
     private String phone;
+    private String key;
 
     @OneToMany(mappedBy = "author")
     private List<Post> posts;

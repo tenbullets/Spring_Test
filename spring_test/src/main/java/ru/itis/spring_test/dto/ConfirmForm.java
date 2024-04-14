@@ -9,11 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserForm {
-    private String email;
-    private String password;
-    private String passwordCheck;
+public class ConfirmForm {
     private String username;
-    private String phone;
     private String key;
 }
