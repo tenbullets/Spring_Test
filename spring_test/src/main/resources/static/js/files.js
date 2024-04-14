@@ -14,9 +14,10 @@ function sendFile() {
     })
         .done(function (response) {
             let fileUrl = 'http://localhost:8080/files/' + response;
-            $('#photo').append('<img src = "' + fileUrl + '"/>');
+            $('#image').append('<img src = "' + fileUrl + '"/>');
         })
         .fail(function () {
+            $('#image').append('<h1>file not found</h1>');
             alert('error')
         });
 }

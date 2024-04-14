@@ -17,6 +17,10 @@ public class SignUpServiceImpl implements SignUpService {
 
     @Autowired
     private UsersRepository usersRepository;
+
+    @Autowired
+    SmsService smsService;
+
     @Override
     public void addUser(UserForm userForm) {
         User user = User.builder()
@@ -26,7 +30,10 @@ public class SignUpServiceImpl implements SignUpService {
                 .status("CONFIRMED")
                 .ban_status(Banned.NONBANNED)
                 .role(Role.USER)
+                .phone(userForm.getPhone())
                 .build();
         usersRepository.save(user);
+
+        smsService.sendSms(user.getPhone(), "hi mark");
     }
 }

@@ -33,5 +33,4 @@ public class FilesController {
     public void getFile(@PathVariable ("file-name") String fileName, HttpServletResponse response) {
         filesStorageService.writeFileToResponse(fileName, response);
     }
-
 }

@@ -22,6 +22,7 @@ import java.util.Optional;
 
 @RestController
 public class SavePostViaAjaxController {
+
     @Autowired
     PostService postService;
 
@@ -32,7 +33,9 @@ public class SavePostViaAjaxController {
     UsersService usersService;
 
     @PostMapping("/savePost")
-    public ResponseEntity<List<PostDto>> getSearchResultViaAjax(@Valid @RequestBody PostAjaxDto post, Errors errors, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+    public ResponseEntity<List<PostDto>> getSearchResultViaAjax(@Valid @RequestBody PostAjaxDto post,
+                                                                @AuthenticationPrincipal UserDetailsImpl userDetails)
+    {
         Optional<User> user = usersService.getUserByEmail(userDetails.getEmail());
         PostForm postForm = new PostForm();
         postForm.setText(post.getText());
@@ -42,4 +45,5 @@ public class SavePostViaAjaxController {
 
         return ResponseEntity.ok(newPostsList);
     }
+
 }

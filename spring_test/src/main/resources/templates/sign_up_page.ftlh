@@ -35,6 +35,9 @@
                     <label for="email">Your Email</label>
                     <input name="email" type="email"  placeholder="Enter Email" id="email">
 
+                    <label for="phone_number">Your Phone Number</label>
+                    <input name="phone" type="tel"  placeholder="Enter Phone Number" id="phone_number">
+
                     <label for="password">Password</label>
                     <input name="password" type="password" placeholder="Enter Password" id="password">
 

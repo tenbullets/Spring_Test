@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.UUID;
-import java.net.*;
 
 @Component
 public class FilesStorageServiceImpl implements FilesStorageService {
@@ -42,7 +41,6 @@ public class FilesStorageServiceImpl implements FilesStorageService {
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
-
 
         filesRepository.save(file);
         return file.getOriginalName();

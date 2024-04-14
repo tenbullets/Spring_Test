@@ -15,13 +15,11 @@
         <button onclick="sendFile()">Загрузить файл</button>
         <div class="filename"></div>
     </div>
-    <div id="photo"></div>
+    <div id="image"></div>
 
 
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="/js/files.js"></script>
 </body>
-
-
 
 </html>
