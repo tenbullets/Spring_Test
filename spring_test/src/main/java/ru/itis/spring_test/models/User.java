@@ -23,7 +23,7 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private String status;
+    private Status status;
     private Role role;
     private Banned ban_status;
     private String phone;

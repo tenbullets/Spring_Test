@@ -4,6 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.itis.spring_test.models.Banned;
+import ru.itis.spring_test.models.Status;
 import ru.itis.spring_test.models.User;
 
 import java.util.Collection;
@@ -50,6 +51,6 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     @Override
-    public boolean isEnabled() { return user.getStatus().equals("CONFIRMED"); }
+    public boolean isEnabled() { return user.getStatus().equals(Status.CONFIRMED); }
 
 }

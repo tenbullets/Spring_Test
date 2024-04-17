@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import ru.itis.spring_test.dto.UserForm;
 import ru.itis.spring_test.models.Banned;
 import ru.itis.spring_test.models.Role;
+import ru.itis.spring_test.models.Status;
 import ru.itis.spring_test.models.User;
 import ru.itis.spring_test.repository.UsersRepository;
 
@@ -31,7 +32,7 @@ public class SignUpServiceImpl implements SignUpService {
                 .email(userForm.getEmail())
                 .password(passwordEncoder.encode(userForm.getPassword()))
                 .username(userForm.getUsername())
-                .status("NON-CONFIRMED")
+                .status(Status.NON_CONFIRMED)
                 .ban_status(Banned.NONBANNED)
                 .role(Role.USER)
                 .phone(userForm.getPhone())
@@ -40,9 +41,9 @@ public class SignUpServiceImpl implements SignUpService {
         usersRepository.save(user);
 
         String msg = activationKey + " — your account activation code";
-        System.out.println(msg);
+//        System.out.println(msg);
         // закомитить ниже, если нет денег на балансе)
-//        smsService.sendSms(user.getPhone(), msg);
+        smsService.sendSms(user.getPhone(), msg);
     }
 
     public String getActivationKey() {

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import ru.itis.spring_test.dto.UserDto;
 import ru.itis.spring_test.models.Banned;
 import ru.itis.spring_test.models.Role;
+import ru.itis.spring_test.models.Status;
 import ru.itis.spring_test.models.User;
 import ru.itis.spring_test.repository.UsersRepository;
 
@@ -67,13 +68,12 @@ public class UsersServiceImpl implements UsersService{
     @Override
     public User confirmUser(Optional<User> user) {
         User u = usersRepository.getOne(user.get().getId());
-        if(u.getStatus().equals("NON-CONFIRMED")) {
-            u.setStatus("CONFIRMED");
+        if(u.getStatus().equals(Status.NON_CONFIRMED)) {
+            u.setStatus(Status.CONFIRMED);
             u.setKey(null);
             usersRepository.save(u);
         }
         return u;
     }
-
 
 }

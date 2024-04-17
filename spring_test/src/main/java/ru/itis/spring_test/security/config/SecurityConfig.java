@@ -51,7 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("delUserAccount").authenticated()
                 .antMatchers("/files/**").authenticated()
 
-
                 .and()
 
                 .formLogin()

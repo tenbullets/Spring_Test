@@ -26,7 +26,7 @@ public class LikesController {
     UsersService usersService;
 
     @PostMapping("/sendLike")
-    public int getLikesViaAjax(@Valid @RequestBody PostPin post, Errors errors, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+    public int getLikesViaAjax(@Valid @RequestBody PostPin post, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         Optional<User> u = usersService.getUserByEmail(userDetails.getEmail());
 
         return postService.like(u.get().getId(), Long.valueOf(post.getPostId())).getLikes();
