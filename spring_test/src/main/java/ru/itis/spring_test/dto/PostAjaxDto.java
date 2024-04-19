@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PostAjaxDto {
     private String text;
+    private String img;
 }

@@ -25,6 +25,7 @@ function renderPosts(postsList) {
     for (let i = 0; i < postsList.length; i++) {
         innerHtml += '<form action="/theWall" method="get">';
         innerHtml += '  <div class="post" id="postwall">';
+        innerHtml += '      <div id="image"><img class="block_img" src="http://localhost:8080/files/' + postsList[i]['img'] +' "></div>';
         innerHtml += '      <p class="text" style="font-size: 24px">' + postsList[i]['author'] + '</p>';
         innerHtml += '      <p class="text" style="font-size: 24px">' + postsList[i]['text'] + '</p>';
         innerHtml += '      <div class="like_block">';

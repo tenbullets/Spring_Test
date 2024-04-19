@@ -45,6 +45,7 @@ public class PostServiceImpl implements PostService {
         Post newPost = Post.builder()
                 .author(user)
                 .text(postForm.getText())
+                .img(postForm.getImg())
                 .build();
 
         postRepository.save(newPost);

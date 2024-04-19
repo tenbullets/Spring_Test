@@ -18,6 +18,7 @@ public class PostDto {
     private String text;
     private String author;
     private Integer likes;
+    private String img;
 
     public static PostDto from(Post post) {
         Integer likesCount = 0;
@@ -29,6 +30,7 @@ public class PostDto {
                 .text(post.getText())
                 .author(post.getAuthor().getUsername())
                 .likes(likesCount)
+                .img(post.getImg())
                 .build();
     }
 

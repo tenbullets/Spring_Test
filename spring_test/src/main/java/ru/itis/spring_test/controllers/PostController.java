@@ -31,6 +31,7 @@ public class PostController {
     @PostMapping("/addPost")
     public String addPost(@AuthenticationPrincipal UserDetailsImpl userDetails, PostForm form) {
         Optional<User> user = usersService.getUserByEmail(userDetails.getEmail());
+
         postService.addPost(user.get().getId(), form);
         return "redirect:/profile";
     }

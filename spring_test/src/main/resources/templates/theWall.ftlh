@@ -30,6 +30,13 @@
             margin-bottom: 10px;
             margin-top: 67px;
         }
+
+        .block_img {
+            height: 221px;
+            margin: 20px 0 0 10px;
+            border-radius: 12px;
+            cursor: default;
+        }
     </style>
 </head>
 
@@ -52,9 +59,14 @@
             <div class="block__3">
                 <form id="save_post">
 
+                    <div>
+                        <input type="file" id="file" name="file" placeholder="Image"/>
+                        <input type="hidden" id="file_hidden">
+                        <div class="filename"></div>
+                    </div>
                     <textarea maxlength="2000" name="text" class="shortDesc" id="post_text"></textarea>
 
-                    <button id="save_btn">SEND POST</button>
+                    <button id="btn-save">SEND POST</button>
                 </form>
 
             </div>
@@ -62,7 +74,10 @@
             <div class="block__4" id="postwall">
                 <#list posts as post>
                     <form action="/theWall" method="get">
+
                         <div class="post">
+                            <div id="image"><img class="block_img" src="/files/${post.img}"></div>
+
                             <p class="text" style="font-size: 24px">${post.author}</p>
                             <p class="text" style="color: darkturquoise">${post.text}</p>
                             <div class="like_block">
@@ -81,7 +96,7 @@
 </div>
 
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="/js/main_3.js"></script>
+<script type="text/javascript" src="/js/add_post.js"></script>
 
 </body>
 </html>

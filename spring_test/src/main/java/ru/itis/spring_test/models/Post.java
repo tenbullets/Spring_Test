@@ -22,6 +22,8 @@ public class Post {
     @Column(length = 280)
     private String text;
 
+    private String img;
+
     @ManyToOne
     @JoinTable(name = "post_author")
     private User author;

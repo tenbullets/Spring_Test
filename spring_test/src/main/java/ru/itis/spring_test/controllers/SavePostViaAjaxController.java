@@ -36,9 +36,16 @@ public class SavePostViaAjaxController {
     public ResponseEntity<List<PostDto>> getSearchResultViaAjax(@Valid @RequestBody PostAjaxDto post,
                                                                 @AuthenticationPrincipal UserDetailsImpl userDetails)
     {
+
+        System.out.println("form img = " + post.getImg());
+        System.out.println();
+        System.out.println("form text = " + post.getText());
+
         Optional<User> user = usersService.getUserByEmail(userDetails.getEmail());
+
         PostForm postForm = new PostForm();
         postForm.setText(post.getText());
+        postForm.setImg(post.getImg());
 
         postService.addPost(user.get().getId(), postForm);
         List<PostDto> newPostsList = postService.getPostByUsername(userDetails.getUsername());

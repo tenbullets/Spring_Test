@@ -31,6 +31,8 @@
                         <form action="/feed" method="get" id="likes-form${post.id}">
                             <div class="post">
 
+                                <div id="image"><img class="block_img" src="/files/${post.img}"></div>
+
                                 <p class="text" style="font-size: 24px">${post.author}</p>
                                 <p class="text" style="color: darkturquoise">${post.text}</p>
                                 <div class="like_block">
