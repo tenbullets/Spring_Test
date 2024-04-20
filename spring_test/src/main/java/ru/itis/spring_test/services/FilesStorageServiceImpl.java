@@ -43,12 +43,12 @@ public class FilesStorageServiceImpl implements FilesStorageService {
         }
 
         filesRepository.save(file);
-        return file.getOriginalName();
+        return file.getStorageFileName();
     }
 
     @Override
     public void writeFileToResponse(String fileName, HttpServletResponse response) {
-        FileInfo fileInfo = filesRepository.findByOriginalName(fileName);
+        FileInfo fileInfo = filesRepository.findByStorageFileName(fileName);
         response.setContentType(fileInfo.getType());
 
         try {

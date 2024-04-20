@@ -1,11 +1,7 @@
 $(document).ready(function () {
     $("#save_post").submit(function (event) {
         event.preventDefault();
-
-        let filename = document.getElementById('file').files[0].name;
-
         save_img();
-        save_desc(filename);
     });
 });
 
@@ -16,23 +12,27 @@ function save_img() {
         formData.append("file", file);
     });
 
-    $.post({
+    $.ajax({
         type: "POST",
         url: "/files",
         data: formData,
         processData: false,
         contentType: false
     })
+        .done(function (data) {
+            let name = data;
+            console.log("filename = " + name)
+            save_desc(name);
+        })
+        .fail(function () {
+            $('#image').append('<h1>file not found</h1>');
+            alert('error')
+        });
+
+
 }
 
 function save_desc(name) {
-    let post_value = {}
-    let file_name = {}
-
-    // post_value["text"] = $("#post_text").val();
-    // file_name["img"] = name;
-    // console.log(JSON.stringify({text: $("#post_text").val(), img:name}));
-
     $("#btn-save").prop("disabled", true);
 
     $.ajax({
@@ -60,8 +60,6 @@ function save_desc(name) {
 }
 
 function renderPosts(postsList) {
-    console.log("size= " + postsList.length)
-
     let innerHtml = "";
 
     for (let i = 0; i < postsList.length; i++) {
