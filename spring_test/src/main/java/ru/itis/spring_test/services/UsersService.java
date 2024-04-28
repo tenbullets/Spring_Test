@@ -1,5 +1,6 @@
 package ru.itis.spring_test.services;
 
+import ru.itis.spring_test.dto.PostForm;
 import ru.itis.spring_test.dto.UserDto;
 import ru.itis.spring_test.models.User;
 

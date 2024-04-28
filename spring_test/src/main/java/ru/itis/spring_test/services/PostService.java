@@ -23,4 +23,6 @@ public interface PostService {
 
     List<PostDto> getPostByUsername(String username);
 
+    List<Long> userLikes(Long userId);
+
 }

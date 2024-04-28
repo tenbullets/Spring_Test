@@ -9,6 +9,7 @@ import ru.itis.spring_test.models.User;
 import ru.itis.spring_test.repository.PostRepository;
 import ru.itis.spring_test.repository.UsersRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -67,6 +68,22 @@ public class PostServiceImpl implements PostService {
 
         postRepository.save(post);
         return PostDto.from(post);
+    }
+
+    @Override
+    public List<Long> userLikes(Long userId) {
+        User user = usersRepository.getOne(userId);
+        List<PostDto> posts = getAllPosts();
+        List<Long> userLikes = new ArrayList<>();
+
+        for (int i = 0; i < posts.size(); i++) {
+            Long postId = posts.get(i).getId();
+            if(postRepository.existsByPostIdAndLikesContaining(postId, user)) {
+                userLikes.add(postId);
+            }
+        }
+
+        return userLikes;
     }
 
     @Override

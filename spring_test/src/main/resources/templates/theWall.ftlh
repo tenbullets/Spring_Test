@@ -61,7 +61,7 @@
 
                     <div>
                         <input type="file" id="file" name="file" placeholder="Image"/>
-                        <input type="hidden" id="file_hidden">
+                        <input type="hidden" id="file_hidden"> 
                         <div class="filename"></div>
                     </div>
                     <textarea maxlength="2000" name="text" class="shortDesc" id="post_text"></textarea>

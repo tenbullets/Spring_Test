@@ -20,6 +20,8 @@ public class PostDto {
     private Integer likes;
     private String img;
 
+    private String userLike;
+
     public static PostDto from(Post post) {
         Integer likesCount = 0;
         if (post.getLikes() != null) {
@@ -33,7 +35,6 @@ public class PostDto {
                 .img(post.getImg())
                 .build();
     }
-
 
     public static List<PostDto> getPostsList(List<Post> posts) {
         return posts.stream()

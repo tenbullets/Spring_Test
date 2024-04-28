@@ -41,7 +41,7 @@ public class SignUpServiceImpl implements SignUpService {
         usersRepository.save(user);
 
         String msg = activationKey + " — your account activation code";
-//        System.out.println(msg);
+        System.out.println(msg);
         // закомитить ниже, если нет денег на балансе)
         smsService.sendSms(user.getPhone(), msg);
     }

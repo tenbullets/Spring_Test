@@ -37,7 +37,9 @@
                                 <p class="text" style="color: darkturquoise">${post.text}</p>
                                 <div class="like_block">
                                     <p class="like_count" style="margin-bottom: 20px; color: #00d188" id="likeCount${post.id}">${post.likes}</p>
-                                    <button type="submit" id="btn_like" class="like" data-liked="false">pin</button>
+
+                                    <input type="hidden" id="likeStatus${post.id}" value="${post.userLike}">
+                                    <button type="submit" id="btn_like${post.id}" class="${post.userLike}" ></button>
                                 </div>
 
                             </div>

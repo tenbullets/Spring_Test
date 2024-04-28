@@ -2,37 +2,20 @@ $(document).ready(function ()  {
     $(".like").click(function (event) {
         let $form = $(this).parents('form');
         let id = $form.attr('id');
-
         let x = id.replace(/^\D+/g, '');
-        console.log(x);
+        console.log("x = " + x);
 
         event.preventDefault();
         send_like(x);
     });
 });
 
-// document.querySelector('.like').addEventListener('click', function () {
-//     let isLiked = this.getAttribute('data-liked');
-//
-//     if (isLiked === 'false') {
-//         //give it a blue thumb to indicate it is liked
-//         this.innerHTML = `<span class="blue-thumb">👍</span>`;
-//         //set the state to be true for it being liked
-//         this.setAttribute('data-liked', 'true');
-//     }
-//     else {
-//         //Reset back to the original Like text
-//         this.innerHTML = `👍 Like`;
-//         //and set the state back to being false for it being liked
-//         this.setAttribute('data-liked', 'false');
-//     }
-// });
-
 function send_like(num) {
     let id = {}
     id["postId"] = num;
 
-    $("#btn_like").prop("disabled", false);
+    let b = "#btn_like" + num;
+    $(b).prop("disabled", false);
 
     $.ajax({
         type: "POST",
@@ -47,6 +30,21 @@ function send_like(num) {
             let elemId = "likeCount" + num;
             let l = document.getElementById(elemId);
             l.innerText = data;
+
+
+            let ls = "likeStatus" + num;
+            console.log("ls = " + ls);
+
+            const likeStatus = document.getElementById(ls);
+
+            if (likeStatus.value === "like") {
+                likeStatus.value = "like pressed";
+                $(b).toggleClass("pressed");
+            } else {
+                likeStatus.value = "like";
+                $(b).toggleClass("pressed");
+            }
+
             console.log("SUCCESS : ", data);
             $("#btn-search").prop("disabled", false);
         },
@@ -56,37 +54,3 @@ function send_like(num) {
         }
     });
 }
-
-// $(document).ready(function ()  {
-//     $(".like").click(function () {
-//         let $form = $(this).parents('form');
-//         let id = $form.attr('id');
-//         // console.log(id);
-//
-//         let x = id.replace(/^\D+/g, '');
-//
-//
-//         $("#" + id).submit(function (event) {
-//             event.preventDefault();
-//             send_like(x);
-//         });
-//     });
-// });
-
-// $(".like").click(function () {
-//     var $form = $(this).parents('form');
-//     var id = $form.attr('id');
-//     console.log(id);
-// });
-
-
-
-
-
-
-
-
-
-
-
-

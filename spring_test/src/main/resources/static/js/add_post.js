@@ -20,16 +20,13 @@ function save_img() {
         contentType: false
     })
         .done(function (data) {
-            let name = data;
-            console.log("filename = " + name)
-            save_desc(name);
+            let fname = data;
+            save_desc(fname);
         })
         .fail(function () {
             $('#image').append('<h1>file not found</h1>');
             alert('error')
         });
-
-
 }
 
 function save_desc(name) {
@@ -61,7 +58,6 @@ function save_desc(name) {
 
 function renderPosts(postsList) {
     let innerHtml = "";
-
     for (let i = 0; i < postsList.length; i++) {
         innerHtml += '<form action="/theWall" method="get">';
         innerHtml += '  <div class="post" id="postwall">';
